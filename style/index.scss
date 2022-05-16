@@ -7,7 +7,13 @@
     margin: 0;
     color: rgb(27, 27, 27);
     box-sizing: inherit;
+    cursor: url('../img/icons8-edit-100.png'), auto;
 }
+
+img, a{
+    cursor: url('../img/icons8-edit-100.png'), auto;
+}
+
 @media only screen and (max-width: 54.0625rem){
     :root{
         font-size: 14px;
@@ -38,8 +44,12 @@ nav{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    width: 95vw;
+    top:0;
+    z-index: 999;
     .nav_logo{
-        width: 130px;
+        width: 150px;
         padding: 1rem 0 1rem 0;
     }
     .nav_socialmedia{
@@ -48,8 +58,19 @@ nav{
                 width: 50px;
                 padding: .1rem;
                 margin: 0 1rem 0 auto;
+                transition: all .5s ease-in-out;
+            }
+            img:hover{
+                transform: scale(1.35);
             }
         }
+    }
+}
+
+@media only screen and (max-width: 45rem){
+    nav{
+        justify-content: center;
+        gap: 2rem;
     }
 }
 
@@ -61,6 +82,7 @@ main{
     flex-direction: row;
     justify-content: space-evenly;
     margin-bottom: 5rem;
+    margin-top: 10rem;
     .box-1{
         margin: auto 0;
         padding-left: 1rem;
@@ -68,14 +90,6 @@ main{
             letter-spacing: 4px;
             font-size: 2.75rem;
             font-weight: bold;
-        }
-        p{
-            word-spacing: 2px;
-            letter-spacing: 1px;
-            line-height: 1.5;
-            width: 40ch;
-            font-weight: bold;
-            font-size: 1.125rem;
             span{
                 position: relative;
             }
@@ -83,23 +97,29 @@ main{
                 @include highlight($color-yellow);
             }
         }
+        p{
+            word-spacing: 2px;
+            letter-spacing: 1px;
+            line-height: 1.5;
+            width: 45ch;
+            font-weight: bold;
+            font-size: 1.2rem;
+            span{
+                position: relative;
+            }
+            span.highlight-yellow:before{
+                @include highlight($color-yellow);
+            }
+            span.highlight-greenh:before{
+                @include highlight($color-greenh);
+            }
+            span.highlight-blueh:before{
+                @include highlight($color-blueh);
+            }
+        }
     }
     img{
         width: 20rem;
-    }
-}
-
-.product{
-    text-align: center;
-    h2{
-        font-size: 2.5rem;
-    }
-    section{
-        label{
-            img{
-                width: 5rem;
-            }
-        }
     }
 }
 
@@ -112,18 +132,25 @@ main{
         align-items: center;
         text-align: center;
         margin-bottom: 3rem;
+        margin-top: 10rem;
         .box-1{
             margin: auto 0;
             h1{
                 letter-spacing: 4px;
                 font-size: 4rem;
                 font-weight: bold;
+                span{
+                    position: relative;
+                }
+                span.highlight-yellow:before{
+                    @include highlight($color-yellow);
+                }
             }
             p{
                 word-spacing: 2px;
                 letter-spacing: 1px;
                 line-height: 1.5;
-                width: 40ch;
+                width: 45ch;
                 font-weight: bold;
                 font-size: 1.3rem;
                 span{
@@ -131,6 +158,12 @@ main{
                 }
                 span.highlight-yellow:before{
                     @include highlight($color-yellow);
+                }
+                span.highlight-greenh:before{
+                    @include highlight($color-greenh);
+                }
+                span.highlight-blueh:before{
+                    @include highlight($color-blueh);
                 }
             }
         }
@@ -140,16 +173,84 @@ main{
     }
 }
 
-/*
+.product{
+    text-align: center;
+    h2{
+        font-size: 2.5rem;
+    }
+    section{
+        label{
+            img{
+                width: 5rem;
+                transition: all .5s ease-in-out;
+            }
+            img:hover{
+                transform: scale(1.35);
+            }
+        }
+    }
+    .cards-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        .card{
+            img{
+                    transition: all .5s ease-in-out;
+            }
+            img:hover{
+                transform: scale(1.25);
+            }
+        }
+    }
+}
 
-span{
-    position: relative;
-}
-span.highlight-pink:before{
-    @include highlight($color-pink);
-}
-span.highlight-blue:before{
-    @include highlight($color-blue);
+.info{
+    margin-top: 5rem;
+    box-shadow: 15px 28px 25px -18px rgba(0, 0, 0, 0.2);
+    border-color: #41403e;
+    border-style: solid;
+    border-width: 2px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: .5rem;
+    justify-content: space-around;
+    align-items: center;
+    article{
+        padding: 0 1rem;
+        h2{
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1.25rem;
+            font-weight: bold;
+            a{
+                text-decoration: none;
+                color: rgb(27, 27, 27);
+                padding-left: 1rem;
+            }
+            span{
+                position: relative;
+            }
+            span.highlight-pinkh:before{
+                @include highlight($color-pinkh);
+            }
+            span.highlight-blueh:before{
+                @include highlight($color-blueh);
+            }
+        }
+        iframe{
+            margin: 1rem;
+        }
+    }
 }
 
-*/
+.shop{
+    padding: 5rem 0;
+    text-align: center;
+}
+
+footer{
+    
+}

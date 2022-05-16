@@ -7,6 +7,11 @@
   margin: 0;
   color: rgb(27, 27, 27);
   box-sizing: inherit;
+  cursor: url("../img/icons8-edit-100.png"), auto;
+}
+
+img, a {
+  cursor: url("../img/icons8-edit-100.png"), auto;
 }
 
 @media only screen and (max-width: 54.0625rem) {
@@ -37,17 +42,31 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  width: 95vw;
+  top: 0;
+  z-index: 999;
 }
 nav .nav_logo {
-  width: 130px;
+  width: 150px;
   padding: 1rem 0 1rem 0;
 }
 nav .nav_socialmedia a img {
   width: 50px;
   padding: 0.1rem;
   margin: 0 1rem 0 auto;
+  transition: all 0.5s ease-in-out;
+}
+nav .nav_socialmedia a img:hover {
+  transform: scale(1.35);
 }
 
+@media only screen and (max-width: 45rem) {
+  nav {
+    justify-content: center;
+    gap: 2rem;
+  }
+}
 /* MAIN CONTENT */
 main {
   --bs-gutter-x: 0;
@@ -55,6 +74,7 @@ main {
   flex-direction: row;
   justify-content: space-evenly;
   margin-bottom: 5rem;
+  margin-top: 10rem;
 }
 main .box-1 {
   margin: auto 0;
@@ -65,13 +85,28 @@ main .box-1 h1 {
   font-size: 2.75rem;
   font-weight: bold;
 }
+main .box-1 h1 span {
+  position: relative;
+}
+main .box-1 h1 span.highlight-yellow:before {
+  content: "";
+  background-color: #f1ee1c;
+  width: 100%;
+  height: 1.2em;
+  position: absolute;
+  z-index: -1;
+  filter: url(#marker-shape);
+  left: -0.3em;
+  top: 0.05em;
+  padding: 0 0.25em;
+}
 main .box-1 p {
   word-spacing: 2px;
   letter-spacing: 1px;
   line-height: 1.5;
-  width: 40ch;
+  width: 45ch;
   font-weight: bold;
-  font-size: 1.125rem;
+  font-size: 1.2rem;
 }
 main .box-1 p span {
   position: relative;
@@ -79,27 +114,41 @@ main .box-1 p span {
 main .box-1 p span.highlight-yellow:before {
   content: "";
   background-color: #f1ee1c;
-  width: 95%;
+  width: 100%;
   height: 1.2em;
   position: absolute;
   z-index: -1;
   filter: url(#marker-shape);
-  left: 0;
-  top: 0.1em;
+  left: -0.3em;
+  top: 0.05em;
+  padding: 0 0.25em;
+}
+main .box-1 p span.highlight-greenh:before {
+  content: "";
+  background-color: #57ff68;
+  width: 100%;
+  height: 1.2em;
+  position: absolute;
+  z-index: -1;
+  filter: url(#marker-shape);
+  left: -0.3em;
+  top: 0.05em;
+  padding: 0 0.25em;
+}
+main .box-1 p span.highlight-blueh:before {
+  content: "";
+  background-color: #19b2ff;
+  width: 100%;
+  height: 1.2em;
+  position: absolute;
+  z-index: -1;
+  filter: url(#marker-shape);
+  left: -0.3em;
+  top: 0.05em;
   padding: 0 0.25em;
 }
 main img {
   width: 20rem;
-}
-
-.product {
-  text-align: center;
-}
-.product h2 {
-  font-size: 2.5rem;
-}
-.product section label img {
-  width: 5rem;
 }
 
 @media only screen and (max-width: 35rem) {
@@ -111,6 +160,7 @@ main img {
     align-items: center;
     text-align: center;
     margin-bottom: 3rem;
+    margin-top: 10rem;
   }
   main .box-1 {
     margin: auto 0;
@@ -120,11 +170,26 @@ main img {
     font-size: 4rem;
     font-weight: bold;
   }
+  main .box-1 h1 span {
+    position: relative;
+  }
+  main .box-1 h1 span.highlight-yellow:before {
+    content: "";
+    background-color: #f1ee1c;
+    width: 100%;
+    height: 1.2em;
+    position: absolute;
+    z-index: -1;
+    filter: url(#marker-shape);
+    left: -0.3em;
+    top: 0.05em;
+    padding: 0 0.25em;
+  }
   main .box-1 p {
     word-spacing: 2px;
     letter-spacing: 1px;
     line-height: 1.5;
-    width: 40ch;
+    width: 45ch;
     font-weight: bold;
     font-size: 1.3rem;
   }
@@ -134,29 +199,129 @@ main img {
   main .box-1 p span.highlight-yellow:before {
     content: "";
     background-color: #f1ee1c;
-    width: 95%;
+    width: 100%;
     height: 1.2em;
     position: absolute;
     z-index: -1;
     filter: url(#marker-shape);
-    left: 0;
-    top: 0.1em;
+    left: -0.3em;
+    top: 0.05em;
+    padding: 0 0.25em;
+  }
+  main .box-1 p span.highlight-greenh:before {
+    content: "";
+    background-color: #57ff68;
+    width: 100%;
+    height: 1.2em;
+    position: absolute;
+    z-index: -1;
+    filter: url(#marker-shape);
+    left: -0.3em;
+    top: 0.05em;
+    padding: 0 0.25em;
+  }
+  main .box-1 p span.highlight-blueh:before {
+    content: "";
+    background-color: #19b2ff;
+    width: 100%;
+    height: 1.2em;
+    position: absolute;
+    z-index: -1;
+    filter: url(#marker-shape);
+    left: -0.3em;
+    top: 0.05em;
     padding: 0 0.25em;
   }
   main img {
     width: 30rem;
   }
 }
-/*
+.product {
+  text-align: center;
+}
+.product h2 {
+  font-size: 2.5rem;
+}
+.product section label img {
+  width: 5rem;
+  transition: all 0.5s ease-in-out;
+}
+.product section label img:hover {
+  transform: scale(1.35);
+}
+.product .cards-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.product .cards-row .card img {
+  transition: all 0.5s ease-in-out;
+}
+.product .cards-row .card img:hover {
+  transform: scale(1.25);
+}
 
-span{
-    position: relative;
+.info {
+  margin-top: 5rem;
+  box-shadow: 15px 28px 25px -18px rgba(0, 0, 0, 0.2);
+  border-color: #41403e;
+  border-style: solid;
+  border-width: 2px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  justify-content: space-around;
+  align-items: center;
 }
-span.highlight-pink:before{
-    @include highlight($color-pink);
+.info article {
+  padding: 0 1rem;
 }
-span.highlight-blue:before{
-    @include highlight($color-blue);
+.info article h2 {
+  font-size: 2rem;
+}
+.info article p {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.info article p a {
+  text-decoration: none;
+  color: rgb(27, 27, 27);
+  padding-left: 1rem;
+}
+.info article p span {
+  position: relative;
+}
+.info article p span.highlight-pinkh:before {
+  content: "";
+  background-color: #f547f5;
+  width: 100%;
+  height: 1.2em;
+  position: absolute;
+  z-index: -1;
+  filter: url(#marker-shape);
+  left: -0.3em;
+  top: 0.05em;
+  padding: 0 0.25em;
+}
+.info article p span.highlight-blueh:before {
+  content: "";
+  background-color: #19b2ff;
+  width: 100%;
+  height: 1.2em;
+  position: absolute;
+  z-index: -1;
+  filter: url(#marker-shape);
+  left: -0.3em;
+  top: 0.05em;
+  padding: 0 0.25em;
+}
+.info article iframe {
+  margin: 1rem;
 }
 
-*//*# sourceMappingURL=index.css.map */
+.shop {
+  padding: 5rem 0;
+  text-align: center;
+}/*# sourceMappingURL=index.css.map */
