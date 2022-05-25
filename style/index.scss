@@ -182,6 +182,7 @@ main{
         label{
             img{
                 width: 5rem;
+                z-index: 999;
                 transition: all .5s ease-in-out;
             }
             img:hover{
@@ -214,7 +215,6 @@ main{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: .5rem;
     justify-content: space-around;
     align-items: center;
     article{
@@ -239,18 +239,18 @@ main{
             span.highlight-blueh:before{
                 @include highlight($color-blueh);
             }
+            }
+            span.highlight-greenh:before{
+                @include highlight($color-greenh);
+            }
         }
         iframe{
             margin: 1rem;
         }
     }
-}
 
 .shop{
     padding: 5rem 0;
     text-align: center;
 }
 
-footer{
-    
-}
